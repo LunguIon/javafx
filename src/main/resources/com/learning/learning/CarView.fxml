@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.learning.learning.CarManager">
+    <top>
+        <MenuBar>
+            <Menu text="View">
+                <MenuItem text="Cars" onAction="#showCars"/>
+                <MenuItem text="Persons" onAction="#showPersons"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <TableView fx:id="carTableView">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID"/>
+                <TableColumn fx:id="modelColumn" text="Model"/>
+                <TableColumn fx:id="brandColumn" text="Brand"/>
+                <TableColumn fx:id="yearColumn" text="Year"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+
+            <TextField fx:id="modelTextField" promptText="Model"/>
+            <TextField fx:id="brandTextField" promptText="Brand"/>
+            <TextField fx:id="yearTextField" promptText="Year"/>
+            <Button text="Add Car" onAction="#addCar"/>
+            <Button text="Update Car" onAction="#updateCar"/>
+            <Button text="Delete Car" onAction="#deleteCar"/>
+        </HBox>
+    </bottom>
+</BorderPane>
